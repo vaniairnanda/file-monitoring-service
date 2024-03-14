@@ -30,6 +30,7 @@ exports.uploadFile = async (req, res) => {
       totalSize += file.size;
     }
 
+    // Enforce quota before allowing upload
     if (totalSize + current_usage > quota_allocation) {
       return res.status(403).send('User quota limit exceeded');
     }
@@ -45,7 +46,7 @@ exports.uploadFile = async (req, res) => {
       await s3.upload(params).promise();
     */ 
 
-      const fileUrl = 'sample-url';
+      const fileUrl = 'sample-url'; // mock url
 
       // Store upload result in DB
       try {
@@ -60,7 +61,7 @@ exports.uploadFile = async (req, res) => {
     });
 
     const results = await Promise.all(uploadPromises);
-    res.json(results);
+    res.status(200).send(results);
   } catch (error) {
     console.error('Error uploading files:', error);
     res.status(500).send('Internal Server Error');
