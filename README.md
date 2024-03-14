@@ -2,6 +2,9 @@
 
 This project includes a migration to seed the user data and a file monitoring service that allows user to upload files to Amazon S3 and enforces a limit quota for each user.
 
+![Untitled Diagram drawio](https://github.com/vaniairnanda/file-monitoring-service/assets/55880424/8a178acd-e643-4ac0-8d4f-2f41c5ad6018)
+
+
 ER Diagram
 
 <img width="325" alt="Screen Shot 2024-03-14 at 11 02 11" src="https://github.com/vaniairnanda/file-monitoring-service/assets/55880424/c6fc9a9d-f553-4f62-ba64-0ff5a311343f">
